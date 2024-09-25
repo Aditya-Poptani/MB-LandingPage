@@ -1,9 +1,12 @@
 /*
 Stacking context :- 
-main image overlays -> 4
+modal -> 999
+brightness event overlay -> 6
+social headers -> 5
 main image -> 3
-main header -> 2
+main header and social icons -> 2
 background hover image -> 1
+background-color-div -> -1 
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
@@ -22,7 +25,6 @@ html,body{
     width: 100%;
     position: relative;
     overflow: hidden;
-    cursor: url(Images/mb-logo-2.png),auto;
 }
 a{
     text-decoration: none;
@@ -156,10 +158,10 @@ a{
     margin: 0 6.5rem 0 0;
 }
 .count-img{
-    height: 130px;
+    height: 8vw;
 }
 .plus-img{
-    height: 30px;
+    height: 2vw;
     margin: -1.3rem 0 0 0;
 }
 .social-icons-container{
@@ -195,10 +197,6 @@ svg{
 .social-icons-container .icon-container:hover svg{
     fill: black;
 }
-.youtube-icon{
-    height: 45px;
-
-}
 
 .modal{
     height: 52vh;
@@ -215,9 +213,6 @@ svg{
     grid-template-rows: 1fr 1fr;
     box-sizing: border-box;
 }
-/* .y-modal{
-    z-index: 101;
-} */
 .video-player-container{
     width: 100%;
     position: relative;
@@ -236,8 +231,8 @@ svg{
     visibility: hidden;
 }
 .closing-btn-container{
-    height: 2.4rem;
-    width: 2.4rem;
+    height: 2.5vw;
+    width: 2.5vw;
     background-color: rgb(221, 39, 39);
     position: absolute;
     border-bottom-left-radius: 50%;
@@ -248,8 +243,11 @@ svg{
     align-items: center;
     cursor: pointer;
 }
+.closing-btn-container:hover{
+    background-color: rgb(222, 56, 56);
+}
 .closing-btn-container img{
-    height: 10px;
+    height: 0.7vw;
     margin-left: 1px;
     margin-bottom: 1px;
 }
@@ -266,10 +264,9 @@ svg{
 }
 .content-section{
     padding:  0 1rem;
-    
 }
 .div-logo-container .logo{
-    height: 3rem;
+    height: 3vw;
 }
 .div-logo-container{
     display: flex;
@@ -291,12 +288,12 @@ svg{
     justify-content: center;
 }
 .in-audience-container .user-tag #fullname ,.in-audience-container .span-count #follower-count{
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 500;
     color: white;
 }
 .in-audience-container .user-tag #username , .in-audience-container .span-count #follower-name{
-    font-size: 0.8rem;
+    font-size: 0.9vw;
     color: gray;
     margin-top: -0.1rem;
 }
@@ -342,7 +339,7 @@ svg{
     text-decoration: none;
     width: 100%;
     color: black;
-    font-size: 1.125em;
+    font-size: 1vw;
     font-weight: 700;
     letter-spacing: 0.2em;
     z-index: 20;
@@ -394,7 +391,7 @@ svg{
 }
 @keyframes pop {
     to{
-        transform: translate(160px);
+        transform: translate(24%);
         visibility:visible; 
         scale: 1.8;
         opacity: 1;
@@ -428,10 +425,10 @@ svg{
 }
 @keyframes wiggle {
     50%{
-        transform: translate(160px,10px);
+        transform: translate(24%,10px);
     }
     70%{
-        transform: translate(160px,-10);
+        transform: translate(24%,-10);
     }
 }
 
@@ -457,5 +454,124 @@ svg{
     }
     .instagram-section{
         margin: 0 4.4rem 0 0;
+    }
+}
+
+@media (min-width:1920px) and (min-height:1080px){
+    .social-icons-container{
+        left: 8.5%;
+        bottom:5.5rem;
+    }
+    .social-icons-container .icon-container{
+        padding: 0.9rem;
+    }
+    .header-container{
+        top: 3vh;
+    }
+    .main-img{
+        height: 950px;
+    }
+    .bg-img{
+        height: 850px;
+    }
+    .header-sections div{
+        font-size: 22rem;
+    }
+    .youtube-section{
+        margin: 0 0 0 10.5rem;
+    }
+    .instagram-section{
+        margin: 0 6.5rem 0 0;
+    }
+    svg{
+        height: 55px;
+    }
+}
+
+@media (min-width:2560px) and (min-height:1440px){
+    .social-icons-container{
+        left: 8%;
+        bottom: 5.5rem;
+        gap: 2rem;
+    }
+    .social-icons-container .icon-container{
+        padding: 1.3rem;
+    }
+    .header-container{
+        top: 4vh;
+    }
+    .main-img{
+        height: 1250px;
+    }
+    .bg-img{
+        height: 1150px;
+    }
+    .header-sections div{
+        font-size: 30rem;
+    }
+    .youtube-section{
+        margin: 0 0 0 13.5rem;
+    }
+    .instagram-section{
+        margin: 0 9rem 0 0;
+    }
+    svg{
+        height: 75px;
+    }
+    .content-section{
+        padding: 1rem 2rem;
+    }
+    .audience-text{
+        font-size: 3rem;
+        margin: -4rem 0 0 0;
+    }
+}
+
+@media (min-width:3840px) and (min-height:2160px){
+    .social-icons-container{
+        left: 8.3%;
+        bottom: 9rem;
+        gap: 3rem;
+    }
+    .social-icons-container .icon-container{
+        padding: 1.5rem;
+    }
+    .header-container{
+        top: 3vh;
+    }
+    .main-img{
+        height: 1950px;
+    }
+    .bg-img{
+        height: 1850px;
+    }
+    .header-sections div{
+        font-size: 45rem;
+    }
+    .youtube-section{
+        margin: 0 0 0 21rem;
+    }
+    .instagram-section{
+        margin: 0 13rem 0 0;
+    }
+    svg{
+        height: 120px;
+    }
+    .content-section{
+        padding: 1rem 2rem;
+    }
+    .audience-text{
+        font-size: 4.5rem;
+        margin: -6rem 0 0 0;
+    }
+    .in-audience-container .user-tag #fullname ,.in-audience-container .span-count #follower-count{
+        font-size: 1.1vw;
+        font-weight: 500;
+        color: white;
+    }
+    .in-audience-container .user-tag #username , .in-audience-container .span-count #follower-name{
+        font-size: 1vw;
+        color: gray;
+        margin-top: -0.1rem;
     }
 }
